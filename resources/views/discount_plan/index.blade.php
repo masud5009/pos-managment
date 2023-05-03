@@ -6,9 +6,22 @@
   <div class="alert alert-danger alert-dismissible text-center"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{{ session()->get('not_permitted') }}</div>
 @endif
 <section>
-    <div class="container-fluid">
-        <a href="{{route('discount-plans.create')}}" class="btn btn-info"><i class="dripicons-plus"></i> {{trans('file.Create Discount Plan')}}</a>&nbsp;
-    </div>
+    <div class="card-header p-0">
+        <div class="container-fluid">
+          <div class="d-flex align-items-center">
+            <div class="col-sm-6 d-flex align-items-center">
+                <a href="{{route('discount-plans.create')}}" class="btn btn-info"><i class="dripicons-plus"></i> {{trans('file.Create Discount Plan')}}</a>&nbsp;
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb bg-transparent d-flex justify-content-end align-items-center position-relative mt-2">
+                <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Settins</a></li>
+                <li class="breadcrumb-item active">Discount List</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
     <div class="table-responsive">
         <table id="discount-plan-table" class="table">
             <thead>

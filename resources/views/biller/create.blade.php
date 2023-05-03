@@ -7,6 +7,7 @@
                     <div class="card-header d-flex align-items-center">
                         <h4>{{trans('file.Add Biller')}}</h4>
                     </div>
+                    
                     <div class="card-body">
                         <p class="italic"><small>{{trans('file.The field labels marked with * are required input fields')}}.</small></p>
                         {!! Form::open(['route' => 'biller.store', 'method' => 'post', 'files' => true]) !!}
