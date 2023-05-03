@@ -13,12 +13,25 @@
 @endif
 
 <section>
-    <div class="container-fluid">
-        @if(in_array("customers-add", $all_permission))
+    <div class="card-header p-0 bg-transparent">
+        <div class="px-2">
+          <div class="d-flex align-items-center">
+            <div class="col-sm-6 d-flex align-items-center">
+                @if(in_array("customers-add", $all_permission))
             <a href="{{route('customer.create')}}" class="btn btn-info"><i class="dripicons-plus"></i> {{trans('file.Add Customer')}}</a>&nbsp;
             <a href="#" data-toggle="modal" data-target="#importCustomer" class="btn btn-primary"><i class="dripicons-copy"></i> {{trans('file.Import Customer')}}</a>
         @endif
-    </div>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb bg-transparent d-flex justify-content-end align-items-center position-relative mt-2">
+                <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">People</a></li>
+                <li class="breadcrumb-item active">Customer List</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
     <div class="table-responsive">
         <table id="customer-table" class="table">
             <thead>
@@ -35,7 +48,7 @@
             </thead>
             <tbody>
                 @foreach($lims_customer_all as $key => $customer)
-                <?php 
+                <?php
                     $saleData = App\Sale::where([
                                     ['customer_id', $customer->id],
                                     ['payment_status', '!=', 4]

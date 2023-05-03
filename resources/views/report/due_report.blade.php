@@ -3,9 +3,22 @@
 <section class="forms">
     <div class="container-fluid">
         <div class="card">
-            <div class="card-header mt-2">
-                <h4 class="text-center">{{trans('file.Due Report')}}</h4>
-            </div>
+            <div class="card-header p-0 bg-transparent">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-sm-6 d-flex align-items-center">
+                        <h4 class="text-center">{{trans('file.Due Report')}}</h4>
+                    </div>
+                    <div class="col-sm-6">
+                      <ol class="breadcrumb bg-transparent d-flex justify-content-end align-items-center position-relative mt-2">
+                        <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="">Report</a></li>
+                        <li class="breadcrumb-item active">Due Report</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
             {!! Form::open(['route' => 'report.dueByDate', 'method' => 'post']) !!}
             <div class="col-md-6 offset-md-3 mt-4 mb-3">
                 <div class="form-group row">

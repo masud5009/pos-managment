@@ -6,12 +6,25 @@
   <div class="alert alert-success alert-dismissible text-center"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{!! session()->get('message') !!}</div>
 @endif
 <section>
-    <div class="container-fluid">
-        @if(in_array("suppliers-add", $all_permission))
-        <a href="{{route('supplier.create')}}" class="btn btn-info"><i class="dripicons-plus"></i> {{trans('file.Add Supplier')}}</a>
+    <div class="card-header p-0 bg-transparent">
+        <div class="px-2">
+          <div class="d-flex align-items-center">
+            <div class="col-sm-6 d-flex align-items-center">
+                @if(in_array("suppliers-add", $all_permission))
+        <a href="{{route('supplier.create')}}" class="btn btn-info mr-2"><i class="dripicons-plus"></i> {{trans('file.Add Supplier')}}</a>
         <a href="#" data-toggle="modal" data-target="#importSupplier" class="btn btn-primary"><i class="dripicons-copy"></i> {{trans('file.Import Supplier')}}</a>
         @endif
-    </div>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb bg-transparent d-flex justify-content-end align-items-center position-relative mt-2">
+                <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                <li class="breadcrumb-item"><a href="">People</a></li>
+                <li class="breadcrumb-item active">Supplier List</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
     <div class="table-responsive">
         <table id="supplier-table" class="table">
             <thead>

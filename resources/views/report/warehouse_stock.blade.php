@@ -3,12 +3,28 @@
 <section>
 	<div class="container-fluid">
         <div class="card">
+            <div class="card-header p-0 bg-transparent">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-sm-6 d-flex align-items-center">
+                        <h3>{{trans('file.Stock Chart')}} </h3>
+                    </div>
+                    <div class="col-sm-6">
+                      <ol class="breadcrumb bg-transparent d-flex justify-content-end align-items-center position-relative mt-2">
+                        <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="">Report</a></li>
+                        <li class="breadcrumb-item active">Stock Chart</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
             <div class="card-body">
 				<div class="col-md-12">
 					<div class="col-md-6 offset-md-3 mt-3 text-center">
 						{{ Form::open(['route' => 'report.warehouseStock', 'method' => 'post', 'id' => 'report-form']) }}
 						<input type="hidden" name="warehouse_id_hidden" value="{{$warehouse_id}}">
-						<h3>{{trans('file.Stock Chart')}} </h3>
+
 						<p>Select warehouse to view chart</p>
 						<select class="form-control mb-3" id="warehouse_id" name="warehouse_id">
 							<option value="0">{{trans('file.All Warehouse')}}</option>

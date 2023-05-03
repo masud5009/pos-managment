@@ -8,8 +8,8 @@
 
 <section>
     <div class="conatiner">
-        <div class="card-header p-0">
-            <div class="container-fluid">
+        <div class="card-header p-0 bg-transparent">
+            <div class="px-2">
               <div class="d-flex align-items-center">
                 <div class="col-sm-6 d-flex align-items-center">
                     <h4>Delivery List</h4>

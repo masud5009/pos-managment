@@ -14,9 +14,22 @@
 
 <section>
     @if(in_array("users-add", $all_permission))
-        <div class="container-fluid">
-            <a href="{{route('user.create')}}" class="btn btn-info"><i class="dripicons-plus"></i> {{trans('file.Add User')}}</a>
-        </div>
+        <div class="card-header p-0 bg-transparent">
+            <div class="px-2">
+              <div class="d-flex align-items-center">
+                <div class="col-sm-6 d-flex align-items-center">
+                    <a href="{{route('user.create')}}" class="btn btn-info"><i class="dripicons-plus"></i> {{trans('file.Add User')}}</a>
+                </div>
+                <div class="col-sm-6">
+                  <ol class="breadcrumb bg-transparent d-flex justify-content-end align-items-center position-relative mt-2">
+                    <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">People</a></li>
+                    <li class="breadcrumb-item active">User List</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
     @endif
     <div class="table-responsive">
         <table id="user-table" class="table">

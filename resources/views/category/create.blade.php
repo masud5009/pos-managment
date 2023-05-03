@@ -19,9 +19,8 @@
     @endif
 
     <section>
-        <div class="container-fluid">
-            <div class="card-header p-0">
-                <div class="container-fluid">
+            <div class="card-header p-0 bg-transparent">
+                <div class="px-2">
                     <div class="d-flex align-items-center">
                         <div class="col-sm-6">
                             <!-- Trigger the modal with a button -->
@@ -40,7 +39,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         <div class="table-responsive">
             <table id="category-table" class="table" style="width: 100%">
                 <thead>

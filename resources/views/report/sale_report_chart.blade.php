@@ -2,9 +2,22 @@
 <section class="forms">
     <div class="container-fluid">
     	<div class="card">
-            <div class="card-header mt-2">
-                <h3 class="text-center">{{trans('file.Sale Report Chart')}}</h3>
-            </div>
+            <div class="card-header p-0 bg-transparent">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-sm-6 d-flex align-items-center">
+                        <h3 class="text-center">{{trans('file.Sale Report Chart')}}</h3>
+                    </div>
+                    <div class="col-sm-6">
+                      <ol class="breadcrumb bg-transparent d-flex justify-content-end align-items-center position-relative mt-2">
+                        <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="">Report</a></li>
+                        <li class="breadcrumb-item active">Sale Report Chart</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
             {!! Form::open(['route' => 'report.saleChart', 'method' => 'post']) !!}
             <div class="row ml-2">
                 <div class="col-md-3">
@@ -55,7 +68,7 @@
             </div>
             {!! Form::close() !!}
         </div>
-        <?php 
+        <?php
             $color = '#733686';
             $color_rgba = 'rgba(115, 54, 134, 0.8)';
         ?>

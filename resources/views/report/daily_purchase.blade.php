@@ -3,10 +3,26 @@
 <section>
 	<div class="container-fluid">
 		<div class="card">
+            <div class="card-header p-0 bg-transparent">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-sm-6 d-flex align-items-center">
+                        <h4 class="text-center">{{trans('file.Daily Purchase Report')}} &nbsp;&nbsp;
+                    </div>
+                    <div class="col-sm-6">
+                      <ol class="breadcrumb bg-transparent d-flex justify-content-end align-items-center position-relative mt-2">
+                        <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="">Report</a></li>
+                        <li class="breadcrumb-item active">Daily Purchase Report</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
 			<div class="card-body">
 				{{ Form::open(['route' => ['report.dailyPurchaseByWarehouse', $year, $month], 'method' => 'post', 'id' => 'report-form']) }}
 				<input type="hidden" name="warehouse_id_hidden" value="{{$warehouse_id}}">
-				<h4 class="text-center">{{trans('file.Daily Purchase Report')}} &nbsp;&nbsp;
+
 				<select class="selectpicker" id="warehouse_id" name="warehouse_id">
 					<option value="0">{{trans('file.All Warehouse')}}</option>
 					@foreach($lims_warehouse_list as $warehouse)

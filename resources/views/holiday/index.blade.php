@@ -6,9 +6,22 @@
   <div class="alert alert-danger alert-dismissible text-center"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{{ session()->get('not_permitted') }}</div>
 @endif
 <section>
-    <div class="container-fluid">
-        <button class="btn btn-info" data-toggle="modal" data-target="#createModal"><i class="dripicons-plus"></i> {{trans('file.Add Holiday')}} </button>
-    </div>
+    <div class="card-header p-0 bg-transparent">
+        <div class="px-2">
+          <div class="d-flex align-items-center">
+            <div class="col-sm-6 d-flex align-items-center">
+                <button class="btn btn-info" data-toggle="modal" data-target="#createModal"><i class="dripicons-plus"></i> {{trans('file.Add Holiday')}} </button>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb bg-transparent d-flex justify-content-end align-items-center position-relative mt-2">
+                <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">HRM</a></li>
+                <li class="breadcrumb-item active">Holiyday List</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
     <div class="table-responsive">
         <table id="holiday-table" class="table">
             <thead>

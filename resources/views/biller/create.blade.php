@@ -4,10 +4,23 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header d-flex align-items-center">
-                        <h4>{{trans('file.Add Biller')}}</h4>
-                    </div>
-                    
+                    <div class="card-header p-0">
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-sm-6 d-flex align-items-center">
+                                <h4>{{trans('file.Add Biller')}}</h4>
+                            </div>
+                            <div class="col-sm-6">
+                              <ol class="breadcrumb bg-transparent d-flex justify-content-end align-items-center position-relative mt-2">
+                                <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                                <li class="breadcrumb-item"><a href="">People</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('biller.index')}}">Biller List</a></li>
+                                <li class="breadcrumb-item active">Add Biller</li>
+                              </ol>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     <div class="card-body">
                         <p class="italic"><small>{{trans('file.The field labels marked with * are required input fields')}}.</small></p>
                         {!! Form::open(['route' => 'biller.store', 'method' => 'post', 'files' => true]) !!}

@@ -16,7 +16,7 @@
 
 <section>
     <div class="card-header p-0 bg-transparent">
-        <div class="p-2">
+        <div class="px-2">
           <div class="d-flex align-items-center">
             <div class="col-sm-6 d-flex align-items-center">
                 <button class="btn btn-info" data-toggle="modal" data-target="#createModal"><i class="dripicons-plus"></i> {{trans('file.Add Currency')}} </button>&nbsp;

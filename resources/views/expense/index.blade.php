@@ -9,8 +9,8 @@
 <section>
     <div class="container-fluid">
         <div class="card">
-            <div class="card-header p-0">
-                <div class="container-fluid">
+            <div class="card-header p-0 bg-transparent">
+                <div class="px-2">
                   <div class="d-flex align-items-center">
                     <div class="col-sm-6 d-flex align-items-center">
                         <h3 class="text-center">{{trans('file.Expense List')}}</h3>
