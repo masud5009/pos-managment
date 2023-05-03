@@ -6,9 +6,23 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header d-flex align-items-center">
-                        <h4>{{trans('file.Update Product')}}</h4>
-                    </div>
+                    <div class="card-header p-0">
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-sm-6 d-flex align-items-center">
+                                <h4>{{trans('file.Update Product')}}</h4>
+                            </div>
+                            <div class="col-sm-6">
+                              <ol class="breadcrumb bg-transparent d-flex justify-content-end align-items-center position-relative mt-2">
+                                <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                                <li class="breadcrumb-item"><a href="">Product</a></li>
+                                <li class="breadcrumb-item"><a href="{{route('products.index')}}">Product List</a></li>
+                                <li class="breadcrumb-item active">Edit Product</li>
+                              </ol>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     <div class="card-body">
                         <p class="italic"><small>{{trans('file.The field labels marked with * are required input fields')}}.</small></p>
                         <form id="product-form">
@@ -356,7 +370,7 @@
                                     @if($lims_product_data->variant_option)
                                     <div class="row" id="variant-input-section">
                                         @foreach($lims_product_data->variant_option as $key => $variant_option)
-                                        <?php 
+                                        <?php
                                             $noOfVariantValue += count(explode(",", $lims_product_data->variant_value[$key]));
                                         ?>
                                         <div class="col-md-4 form-group mt-2">
@@ -528,7 +542,7 @@
         alert('dadffff');
     });
 
-    $('.add-more-variant').on("click", function() {                       
+    $('.add-more-variant').on("click", function() {
         var htmlText = '<div class="col-md-4 form-group mt-2"><label>Option *</label><input type="text" name="variant_option[]" class="form-control variant-field" placeholder="Size, Color etc..."></div><div class="col-md-6 form-group mt-2"><label>Value *</label><input type="text" name="variant_value[]" class="type-variant form-control variant-field"></div>';
         $("#variant-input-section").append(htmlText);
         $('.type-variant').tagsInput();
@@ -551,19 +565,19 @@
                 focus: false,
                 callback: true
             }, options);
-            
+
             this.each(function() {
                 var id = $(this).attr('id');
                 var tagslist = $(this).val().split(_getDelimiter(delimiter[id]));
                 if (tagslist[0] === '') tagslist = [];
 
                 value = jQuery.trim(value);
-                
+
                 if ((inputSettings[id].unique && $(this).tagExist(value)) || !_validateTag(value, inputSettings[id], tagslist, delimiter[id])) {
                     $('#' + id + '_tag').addClass('error');
                     return false;
                 }
-                
+
                 $('<span>', {class: 'tag'}).append(
                     $('<span>', {class: 'tag-text'}).text(value),
                     $('<button>', {class: 'tag-remove'}).click(function() {
@@ -586,7 +600,7 @@
                     var f = callbacks[id]['onAddTag'];
                     f.call(this, this, value);
                 }
-                
+
                 if (callbacks[id] && callbacks[id]['onChange']) {
                     var i = tagslist.length;
                     var f = callbacks[id]['onChange'];
@@ -657,14 +671,14 @@
 
         $.fn.removeTag = function(value) {
             value = decodeURI(value);
-            
+
             this.each(function() {
                 var id = $(this).attr('id');
 
                 var old = $(this).val().split(_getDelimiter(delimiter[id]));
 
                 $('#' + id + '_tagsinput .tag').remove();
-                
+
                 var str = '';
                 for (i = 0; i < old.length; ++i) {
                     if (old[i] != value) {
@@ -720,7 +734,7 @@
                 $(this).data('tagsinput-init', true);
 
                 if (settings.hide) $(this).hide();
-                
+
                 var id = $(this).attr('id');
                 if (!id || _getDelimiter(delimiter[$(this).attr('id')])) {
                     id = $(this).attr('id', 'tags' + new Date().getTime() + (++uniqueIdCounter)).attr('id');
@@ -765,21 +779,21 @@
                 if ($(data.real_input).val() !== '') {
                     $.fn.tagsInput.importTags($(data.real_input), $(data.real_input).val());
                 }
-                
+
                 // Stop here if interactive option is not chosen
                 if (!settings.interactive) return;
-                
+
                 $(data.fake_input).val('');
                 $(data.fake_input).data('pasted', false);
-                
+
                 $(data.fake_input).on('focus', data, function(event) {
                     $(data.holder).addClass('focus');
-                    
+
                     if ($(this).val() === '') {
                         $(this).removeClass('error');
                     }
                 });
-                
+
                 $(data.fake_input).on('blur', data, function(event) {
                     $(data.holder).removeClass('focus');
                 });
@@ -791,10 +805,10 @@
                             focus: true,
                             unique: settings.unique
                         });
-                        
+
                         return false;
                     });
-                    
+
                     $(data.fake_input).on('keypress', data, function(event) {
                         if (_checkDelimiter(event)) {
                             $(this).autocomplete("close");
@@ -806,42 +820,42 @@
                             focus: true,
                             unique: settings.unique
                         });
-                        
+
                         return false;
                     });
                 }
-                
+
                 // If a user types a delimiter create a new tag
                 $(data.fake_input).on('keypress', data, function(event) {
                     if (_checkDelimiter(event)) {
                         event.preventDefault();
-                        
+
                         $(event.data.real_input).addTag($(event.data.fake_input).val(), {
                             focus: true,
                             unique: settings.unique
                         });
-                        
+
                         return false;
                     }
                 });
-                
+
                 $(data.fake_input).on('paste', function () {
                     $(this).data('pasted', true);
                 });
-                
+
                 // If a user pastes the text check if it shouldn't be splitted into tags
                 $(data.fake_input).on('input', data, function(event) {
                     if (!$(this).data('pasted')) return;
-                    
+
                     $(this).data('pasted', false);
-                    
+
                     var value = $(event.data.fake_input).val();
-                    
+
                     value = value.replace(/\n/g, '');
                     value = value.replace(/\s/g, '');
-                    
+
                     var tags = _splitIntoTags(event.data.delimiter, value);
-                    
+
                     if (tags.length > 1) {
                         for (var i = 0; i < tags.length; ++i) {
                             $(event.data.real_input).addTag(tags[i], {
@@ -849,11 +863,11 @@
                                 unique: settings.unique
                             });
                         }
-                        
+
                         return false;
                     }
                 });
-                
+
                 // Deletes last tag on backspace
                 data.removeWithBackspace && $(data.fake_input).on('keydown', function(event) {
                     if (event.keyCode == 8 && $(this).val() === '') {
@@ -876,7 +890,7 @@
 
             return this;
         };
-        
+
         $.fn.tagsInput.updateTagsField = function(obj, tagslist) {
             var id = $(obj).attr('id');
             $(obj).val(tagslist.join(_getDelimiter(delimiter[id])));
@@ -884,23 +898,23 @@
 
         $.fn.tagsInput.importTags = function(obj, val) {
             $(obj).val('');
-            
+
             var id = $(obj).attr('id');
-            var tags = _splitIntoTags(delimiter[id], val); 
-            
+            var tags = _splitIntoTags(delimiter[id], val);
+
             for (i = 0; i < tags.length; ++i) {
                 $(obj).addTag(tags[i], {
                     focus: false,
                     callback: false
                 });
             }
-            
+
             if (callbacks[id] && callbacks[id]['onChange']) {
                 var f = callbacks[id]['onChange'];
                 f.call(obj, obj, tags);
             }
         };
-        
+
         var _getDelimiter = function(delimiter) {
             if (typeof delimiter === 'undefined') {
                 return delimiter;
@@ -910,16 +924,16 @@
                 return delimiter[0];
             }
         };
-        
+
         var _validateTag = function(value, inputSettings, tagslist, delimiter) {
             var result = true;
-            
+
             if (value === '') result = false;
             if (value.length < inputSettings.minChars) result = false;
             if (inputSettings.maxChars !== null && value.length > inputSettings.maxChars) result = false;
             if (inputSettings.limit !== null && tagslist.length >= inputSettings.limit) result = false;
             if (inputSettings.validationPattern !== null && !inputSettings.validationPattern.test(value)) result = false;
-            
+
             if (typeof delimiter === 'string') {
                 if (value.indexOf(delimiter) > -1) result = false;
             } else {
@@ -928,13 +942,13 @@
                     return false;
                 });
             }
-            
+
             return result;
         };
-     
+
         var _checkDelimiter = function(event) {
             var found = false;
-            
+
             if (event.which === 13) {
                 return true;
             }
@@ -950,26 +964,26 @@
                     }
                 });
             }
-            
+
             return found;
          };
-         
+
          var _splitIntoTags = function(delimiter, value) {
              if (value === '') return [];
-             
+
              if (typeof delimiter === 'string') {
                  return value.split(delimiter);
              } else {
                  var tmpDelimiter = '∞';
                  var text = value;
-                 
+
                  $.each(delimiter, function(index, _delimiter) {
                      text = text.split(_delimiter).join(tmpDelimiter);
                  });
-                 
+
                  return text.split(tmpDelimiter);
              }
-             
+
              return [];
          };
     })(jQuery);

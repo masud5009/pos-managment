@@ -11,9 +11,22 @@
 @endif
 
 <section>
-    <div class="container-fluid">
-        <button class="btn btn-info" data-toggle="modal" data-target="#gift_card-modal"><i class="dripicons-plus"></i> {{trans('file.Add Gift Card')}}</button>
-    </div>
+    <div class="card-header p-0">
+        <div class="container-fluid">
+          <div class="d-flex align-items-center">
+            <div class="col-sm-6 d-flex align-items-center">
+                <button class="btn btn-info" data-toggle="modal" data-target="#gift_card-modal"><i class="dripicons-plus"></i> {{trans('file.Add Gift Card')}}</button>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb bg-transparent d-flex justify-content-end align-items-center position-relative mt-2">
+                <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Sale</a></li>
+                <li class="breadcrumb-item active">Gift Card List</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
     <div class="table-responsive">
         <table id="gift_card-table" class="table">
             <thead>

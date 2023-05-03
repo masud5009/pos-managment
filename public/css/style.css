@@ -1,24 +1,26 @@
-
-.logo-container{
+.logo-container {
     width: 100px;
 }
-.logo-container > img{
+
+.logo-container>img {
     width: 100%;
 }
 
 .main-container {
     margin-top: 65px;
 }
-.hi{
-        background-color: #04AA6D;
-        color: white;
+
+.hi {
+    background-color: #04AA6D;
+    color: white;
 }
 
-.form-container{
+.form-container {
     max-width: 600px;
     margin: 10px auto;
 }
-.form-container h1{
+
+.form-container h1 {
     font-weight: 300;
     font-size: 2.5rem;
 }
@@ -28,16 +30,17 @@
     border-radius: 5px;
     background: white;
 }
-#imageUpload{
+
+#imageUpload {
     margin-bottom: 20px;
     min-height: 80px;
 }
 
-div.has-error > input {
+div.has-error>input {
     border: 1px solid #dc3545;
 }
 
-div.has-error> .form-text {
+div.has-error>.form-text {
     color: #dc3545;
 }
 
@@ -51,8 +54,9 @@ div.has-error> .form-text {
     color: #e13535;
 }
 
-#success-text{
+#success-text {
     margin-top: 20px;
     font-size: 1.2rem;
 }
+
 

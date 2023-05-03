@@ -7,14 +7,26 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header d-flex align-items-center">
-                        <h4>{{trans('file.Add Return')}}</h4>
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center">
+                            <div class="col-sm-6 d-flex align-items-center">
+                                <h4>{{trans('file.Add Return')}}</h4>
+                            </div>
+                            <div class="col-sm-6">
+                                <ol
+                                    class="breadcrumb bg-transparent d-flex justify-content-end align-items-center position-relative mt-2">
+                                    <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Return</a></li>
+                                    <li class="breadcrumb-item active">Add Purchase Return</li>
+                                </ol>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body">
                         <p class="italic"><small>{{trans('file.The field labels marked with * are required input fields')}}.</small></p>
                         {!! Form::open(['route' => 'return-purchase.store', 'method' => 'post', 'files' => true, 'class' => 'payment-form']) !!}
                         <div class="row">
-                            <div class="col-md-12">                                
+                            <div class="col-md-12">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <input type="hidden" name="purchase_id" value="{{$lims_purchase_data->id}}">
@@ -326,7 +338,7 @@ function calculateGrandTotal() {
     var order_tax = subtotal * (order_tax / 100);
     var grand_total = subtotal + order_tax;
 
-    
+
     $('#subtotal').text(subtotal.toFixed(2));
     $('#order_tax').text(order_tax.toFixed(2));
     $('input[name="order_tax"]').val(order_tax.toFixed(2));

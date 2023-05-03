@@ -9,8 +9,22 @@
 <section>
     <div class="container-fluid">
         <div class="card">
-            <div class="card-header mt-2">
-                <h3 class="text-center">{{trans('file.Purchase Return List')}}</h3>
+            <div class="card-header p-0">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center">
+                        <div class="col-sm-6 d-flex align-items-center">
+                            <h3 class="text-center">{{trans('file.Purchase Return List')}}</h3>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol
+                                class="breadcrumb bg-transparent d-flex justify-content-end align-items-center position-relative mt-2">
+                                <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Return</a></li>
+                                <li class="breadcrumb-item active">Purchase Return List</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
             </div>
             {!! Form::open(['route' => 'return-purchase.index', 'method' => 'get']) !!}
             <div class="row mb-3">

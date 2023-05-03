@@ -11,10 +11,23 @@
 @endif
 
 <section>
-    <div class="container-fluid">
-        <button class="btn btn-info" data-toggle="modal" data-target="#createModal"><i class="dripicons-plus"></i> {{trans('file.Add Expense Category')}}</button>&nbsp;
-        <button class="btn btn-primary" data-toggle="modal" data-target="#importExpenseCategory"><i class="dripicons-copy"></i> {{trans('file.Import Expense Category')}}</button>
-    </div>
+    <div class="card-header p-0">
+        <div class="container-fluid">
+          <div class="d-flex align-items-center">
+            <div class="col-sm-6 d-flex align-items-center">
+                    <button class="btn btn-info" data-toggle="modal" data-target="#createModal"><i class="dripicons-plus"></i> {{trans('file.Add Expense Category')}}</button>&nbsp;
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#importExpenseCategory"><i class="dripicons-copy"></i> {{trans('file.Import Expense Category')}}</button>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb bg-transparent d-flex justify-content-end align-items-center position-relative mt-2">
+                <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Expense</a></li>
+                <li class="breadcrumb-item active">Expense Category List</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
     <div class="table-responsive">
         <table id="expense_category-table" class="table">
             <thead>

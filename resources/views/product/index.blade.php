@@ -17,10 +17,25 @@
 
 <section>
     <div class="container-fluid">
-        @if(in_array("products-add", $all_permission))
-            <a href="{{route('products.create')}}" class="btn btn-info"><i class="dripicons-plus"></i> {{__('file.add_product')}}</a>
-            <a href="#" data-toggle="modal" data-target="#importProduct" class="btn btn-primary"><i class="dripicons-copy"></i> {{__('file.import_product')}}</a>
-        @endif
+        <div class="card-header p-0">
+            <div class="container-fluid">
+              <div class="d-flex align-items-center">
+                <div class="col-sm-6 d-flex align-items-center">
+                    @if(in_array("products-add", $all_permission))
+                    <a href="{{route('products.create')}}" class="btn btn-info mr-2"><i class="dripicons-plus"></i> {{__('file.add_product')}}</a>
+                    <a href="#" data-toggle="modal" data-target="#importProduct" class="btn btn-primary"><i class="dripicons-copy"></i> {{__('file.import_product')}}</a>
+                    @endif
+                </div>
+                <div class="col-sm-6">
+                  <ol class="breadcrumb bg-transparent d-flex justify-content-end align-items-center position-relative mt-2">
+                    <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Product</a></li>
+                    <li class="breadcrumb-item active">Products List</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
     </div>
     <div class="table-responsive">
         <table id="product-data-table" class="table" style="width: 100%">

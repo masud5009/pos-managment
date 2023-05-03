@@ -6,15 +6,16 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header" style="padding:14px 0 0 0">
+                    <div class="card-header p-0">
                         <div class="container-fluid">
-                          <div class="d-flex align-items-center">
-                            <div class="col-sm-6">
+                          <div class="row">
+                            <div class="col-sm-6 d-flex align-items-center">
                               <h4>{{trans('file.add_product')}}</h4>
                             </div>
                             <div class="col-sm-6">
-                              <ol class="breadcrumb float-sm-right bg-transparent">
-                                <li class="breadcrumb-item"><a href="#">Product</a></li>
+                              <ol class="breadcrumb bg-transparent d-flex justify-content-end align-items-center position-relative mt-2">
+                                <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                                <li class="breadcrumb-item"><a href="{{route('products.index')}}">Product</a></li>
                                 <li class="breadcrumb-item active">Add Product</li>
                               </ol>
                             </div>

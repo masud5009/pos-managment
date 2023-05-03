@@ -7,9 +7,22 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header d-flex align-items-center">
-                        <h4>{{trans('file.Add Purchase')}}</h4>
-                    </div>
+                    <div class="card-header p-0">
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-sm-6 d-flex align-items-center">
+                                <h4>{{trans('file.Add Purchase')}}</h4>
+                            </div>
+                            <div class="col-sm-6">
+                              <ol class="breadcrumb bg-transparent d-flex justify-content-end align-items-center position-relative mt-2">
+                                <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Purchase</a></li>
+                                <li class="breadcrumb-item active">Add Purchase</li>
+                              </ol>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     <div class="card-body">
                         <p class="italic"><small>{{trans('file.The field labels marked with * are required input fields')}}.</small></p>
                         {!! Form::open(['route' => 'purchases.store', 'method' => 'post', 'files' => true, 'id' => 'purchase-form']) !!}
@@ -342,7 +355,7 @@
                 $productArray[] = htmlspecialchars($product->item_code) . '|' . preg_replace('/[\n\r]/', "<br>", htmlspecialchars($product->name));
             ?>
         @endforeach
-        
+
         <?php
             echo  '"'.implode('","', $productArray).'"';
         ?>

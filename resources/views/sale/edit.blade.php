@@ -7,9 +7,23 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header d-flex align-items-center">
-                        <h4>{{trans('file.Update Sale')}}</h4>
-                    </div>
+                    <div class="card-header p-0">
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-sm-6 d-flex align-items-center">
+                                <h4>{{trans('file.Update Sale')}}</h4>
+                            </div>
+                            <div class="col-sm-6">
+                              <ol class="breadcrumb bg-transparent d-flex justify-content-end align-items-center position-relative mt-2">
+                                <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Sale</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('sales.index')}}">Sale List</a></li>
+                                <li class="breadcrumb-item active">Edit Sale</li>
+                              </ol>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     <div class="card-body">
                         <p class="italic"><small>{{trans('file.The field labels marked with * are required input fields')}}.</small></p>
                         {!! Form::open(['route' => ['sales.update', $lims_sale_data->id], 'method' => 'put', 'files' => true, 'id' => 'payment-form']) !!}
@@ -1089,7 +1103,7 @@
         var shipping_cost = parseFloat($('input[name="shipping_cost"]').val());
         var order_discount_type = $('select[name="order_discount_type"]').val();
         var order_discount_value = parseFloat($('input[name="order_discount_value"]').val());
-    
+
         if (!order_discount_value)
             order_discount_value = 0.00;
 
