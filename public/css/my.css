@@ -1,13 +1,21 @@
 .hi{
-    background: yellow;
+        background: #007bff;
         position: relative;
         line-height: 1.9;
         text-transform: uppercase;
-        color: #303030;
+        color: #ffffff;
         display: block;
         border-radius: 4px;
         margin: 5px 10px;
         padding: 5px 8px;
         font-size: initial;
         font-weight: 600;
+        text-align: center;
+}
+.collapse.show {
+    display: block;
+    background-color: transparent;
+}
+.side-navbar li ul li a{
+    color: #c2c7d0;
 }
