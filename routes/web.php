@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,13 +10,15 @@
 |
 */
 
-use Illuminate\Routing\Route;
+
+use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function() {
 	Route::get('/dashboard', 'HomeController@dashboard');
 });
+
 
 Route::group(['middleware' => ['auth', 'active']], function() {
 	Route::get('/', 'HomeController@index');
