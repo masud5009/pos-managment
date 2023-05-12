@@ -19,3 +19,9 @@
 .side-navbar li ul li a{
     color: #c2c7d0;
 }
+#side-main-menu span a{
+    font-weight: 600;
+}
+#side-main-menu a{
+    font-weight: 600;
+}

@@ -151,6 +151,7 @@
                         ['role_id', $role->id]
                     ])->first();
               ?>
+
               @if($category_permission_active || $index_permission_active || $print_barcode_active || $stock_count_active || $adjustment_active)
               <li><a href="#product" aria-expanded="false" data-toggle="collapse"> <i class="dripicons-list"></i><span>{{__('file.product')}}</span><span></a>
                 <ul id="product" class="collapse list-unstyled ">

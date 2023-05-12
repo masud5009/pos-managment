@@ -41,7 +41,7 @@
                 <label for="login-username" class="label-material">{{trans('file.Username')}}</label>
                 @if(session()->has('error'))
                     <p>
-                        <strong>{{ session()->get('error') }}</strong>
+                        <strong class="text-danger">{{ session()->get('error') }}</strong>
                     </p>
                 @endif
               </div>
@@ -51,7 +51,7 @@
                 <label for="login-password" class="label-material">{{trans('file.Password')}}</label>
                 @if(session()->has('error'))
                     <p>
-                        <strong>{{ session()->get('error') }}</strong>
+                        <strong class="text-danger">{{ session()->get('error') }}</strong>
                     </p>
                 @endif
               </div>
@@ -89,7 +89,7 @@
         $("input[name='name']").focus().val('admin');
         $("input[name='password']").focus().val('admin');
     });
-    
+
     if ('serviceWorker' in navigator ) {
         window.addEventListener('load', function() {
             navigator.serviceWorker.register('/salepro/service-worker.js').then(function(registration) {
