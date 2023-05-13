@@ -39,8 +39,11 @@ nav.navbar a.menu-btn{
 nav.navbar .nav-item a i{
     color: #fff;
 }
-nav.navbar .nav-item a:hover{
+nav.navbar a:hover{
     background: transparent;
+}
+nav.navbar .btn-pos:hover{
+    background-color: #7c5cc4;
 }
 
 nav.navbar .nav-item span{
