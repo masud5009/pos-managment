@@ -30,3 +30,27 @@
     font-weight: 600;
     font-size: 15px;
 }
+nav.navbar{
+    background-color: #4f5962 !important;
+}
+nav.navbar a.menu-btn{
+    color: #fff;
+}
+nav.navbar .nav-item a i{
+    color: #fff;
+}
+nav.navbar .nav-item a:hover{
+    background: none;
+}
+nav.navbar .nav-item span{
+    color: #fff;
+}
+.right-sidebar{
+    background-color: #4f5962 !important;
+}
+.right-sidebar a{
+    color: #fff;
+}
+nav.navbar a.menu-btn{
+    color: #fff;
+}

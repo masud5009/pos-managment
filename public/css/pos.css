@@ -1,0 +1,25 @@
+.collapse.show {
+    display: block;
+    background-color: transparent;
+}
+.side-navbar li ul li a{
+    color: #c2c7d0;
+}
+#side-main-menu span{
+    font-size: 15px;
+}
+#side-main-menu span a{
+    font-weight: 600;
+
+}
+#side-main-menu a{
+    font-weight: 600;
+    font-size: 15px;
+}
+nav.navbar{
+    background-color: #c4e5c0 !important;
+}
+nav.navbar a.menu-btn
+{
+    color: black;
+}
