@@ -58,3 +58,10 @@ nav.navbar .nav-item span{
 nav.navbar a.menu-btn{
     color: #fff;
 }
+nav.navbar .notifications{
+    color: #fff;
+}
+nav.navbar .notifications a:hover{
+    color: #fff;
+}
+

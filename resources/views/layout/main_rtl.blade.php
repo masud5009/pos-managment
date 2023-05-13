@@ -905,7 +905,6 @@
       <!-- navbar-->
       <header class="header">
         <nav class="navbar">
-          <div class="container-fluid">
             <div class="navbar-holder d-flex align-items-center justify-content-between">
               <a id="toggle-btn" href="#" class="menu-btn"><i class="fa fa-bars"> </i></a>
               <span class="brand-big">
@@ -1056,7 +1055,7 @@
                 </li>
               </ul>
             </div>
-          </div>
+
         </nav>
       </header>
     <div class="page">
