@@ -23,3 +23,10 @@ nav.navbar a.menu-btn
 {
     color: black;
 }
+nav.navbar .nav-item a{
+    color: #4f5962;
+}
+nav.navbar .nav-item a:hover{
+    background: transparent;
+    color: #4f5962;
+}

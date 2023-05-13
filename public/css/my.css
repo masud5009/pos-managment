@@ -40,8 +40,9 @@ nav.navbar .nav-item a i{
     color: #fff;
 }
 nav.navbar .nav-item a:hover{
-    background: none;
+    background: transparent;
 }
+
 nav.navbar .nav-item span{
     color: #fff;
 }
