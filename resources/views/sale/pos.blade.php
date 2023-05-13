@@ -1,4 +1,13 @@
 @extends('layout.top-head')
+<style>
+    .collapse.show {
+    display: block;
+    background-color: transparent;
+}
+.side-navbar li ul li a{
+    color: #c2c7d0;
+}
+</style>
 @section('content')
 @if($errors->has('phone_number'))
 <div class="alert alert-danger alert-dismissible text-center">
@@ -493,7 +502,7 @@
                                     ->join('role_has_permissions', 'permissions.id', '=', 'role_has_permissions.permission_id')
                                     ->where([
                                     ['permissions.name', 'dso-report'],
-                                    ['role_id', $role->id] 
+                                    ['role_id', $role->id]
                             ])->first();
             $user_report_active = DB::table('permissions')
                 ->join('role_has_permissions', 'permissions.id', '=', 'role_has_permissions.permission_id')
@@ -3172,7 +3181,7 @@ function checkQuantity(sale_qty, flag) {
                 localStorageQty[rowindex] = sale_qty;
                 localStorage.setItem("localStorageQty", localStorageQty);
                 checkQuantity(sale_qty, true);
-            } 
+            }
             else {
                 localStorageQty[rowindex] = sale_qty;
                 localStorage.setItem("localStorageQty", localStorageQty);

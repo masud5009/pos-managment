@@ -24,7 +24,7 @@
         <div class="form-outer text-center d-flex align-items-center">
           <div class="form-inner">
             <div class="logo">
-                <img src="{{url('public/logo/20221209082847.png')}}" width="220"> <br/>
+                <img src="{{asset('public/logo/logo1.png')}}" width="220"> <br/>
                 @if($general_setting->site_logo)
                 <img src="{{url('public/logo', $general_setting->site_logo)}}" width="110">
                 @else
