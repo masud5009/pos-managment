@@ -1,13 +1,4 @@
 @extends('layout.top-head')
-<style>
-    .collapse.show {
-    display: block;
-    background-color: transparent;
-}
-.side-navbar li ul li a{
-    color: #c2c7d0;
-}
-</style>
 @section('content')
 @if($errors->has('phone_number'))
 <div class="alert alert-danger alert-dismissible text-center">

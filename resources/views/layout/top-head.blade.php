@@ -48,7 +48,7 @@
     <noscript><link href="<?php echo asset('vendor/datatable/dataTables.bootstrap4.min.css') ?>" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="<?php echo asset('css/style.default.css') ?>" id="theme-stylesheet" type="text/css">
     <link rel="stylesheet" href="<?php echo asset('css/style.css') ?>">
-
+    <link rel="stylesheet" href="<?php echo asset('css/my.css') ?>">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="<?php echo asset('css/custom-'.$general_setting->theme) ?>" type="text/css" id="custom-style">
     @if( Config::get('app.locale') == 'ar' || $general_setting->is_rtl)
